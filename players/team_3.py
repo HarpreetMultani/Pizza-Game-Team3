@@ -25,7 +25,7 @@ class Player:
             preferences_total(list) : List of size [num_cust, 2, num_toppings], having all generated customer preferences
         """
         
-         mean = 0.8
+        mean = 0.8
         std_dev = 2.0
         
         preferences_total = []

@@ -6,21 +6,12 @@ import copy
 import argparse
 from utils import pizza_calculations
 from players.default_player import Player as default_player
-<<<<<<< HEAD
-from players.default_player import Player as p1
-from players.team_2 import Player as p2
-from players.default_player import Player as p3
-from players.default_player import Player as p4
-from players.default_player import Player as p5
-from players.default_player import Player as p6
-=======
 from players.team_1 import Player as p1
 from players.team_2 import Player as p2
 from players.team_3 import Player as p3
 from players.team_4 import Player as p4
 from players.team_5 import Player as p5
 from players.team_6 import Player as p6
->>>>>>> upstream/master
 import pickle as pkl
 
 class no_gui():

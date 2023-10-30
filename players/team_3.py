@@ -25,7 +25,7 @@ class Player:
             preferences_total(list) : List of size [num_cust, 2, num_toppings], having all generated customer preferences
         """
         
-         mean = 0.8
+        mean = 0.8
         std_dev = 2.0
         
         preferences_total = []
@@ -121,7 +121,7 @@ class Player:
         x = 1; y = 1; angle = np.pi/8
         cut = [1, 1, angle]
         if self.counter == 0:
-            B, C, U, obtained_preferences = self.calculator.final_score(pizzas, [0], [customer_amounts], [cut], self.num_toppings, self.multiplier, 12*self.multiplier, 10*self.multiplier)
+            #B, C, U, obtained_preferences = self.calculator.final_score(pizzas, [0], [customer_amounts], [cut], self.num_toppings, self.multiplier, 12*self.multiplier, 10*self.multiplier)
             """
             print(B)
             print(self.sum(B[0]))

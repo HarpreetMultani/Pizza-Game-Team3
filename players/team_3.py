@@ -10,6 +10,8 @@ class Player:
         self.rng = rng
         self.num_toppings = num_toppings
         self.multiplier=40
+        self.x = 12*self.multiplier	# Center Point x of pizza
+        self.y = 10*self.multiplier	# Center Point y of pizza
         self.calculator = pizza_calculations()
         self.counter = 0
 
@@ -34,21 +36,20 @@ class Player:
             for i in range(num_cust):
                 preferences_1 = np.random.normal(mean, std_dev, self.num_toppings)
                 print(f'preferences 1 self.rng {preferences_1}')
-                preferences_1 = np.clip(preferences_1, 0, None)  
-                preferences_1 /= preferences_1.sum()  
-                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()]) 
+                preferences_1 = np.clip(preferences_1, 0, None)  # Ensure preferences are non-negative
+                preferences_1 /= preferences_1.sum()  # Normalize the preferences
+                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()])  # Duplicate preferences
         else :
             np.random.seed(rng)
             for i in range(num_cust):
                 preferences_1 = np.random.normal(mean, std_dev, self.num_toppings)
                 print(f'preferences 1 rng {preferences_1}')
-                preferences_1 = np.clip(preferences_1, 0, None)  
-                preferences_1 /= preferences_1.sum()
-                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()])  
+                preferences_1 = np.clip(preferences_1, 0, None)  # Ensure preferences are non-negative
+                preferences_1 /= preferences_1.sum()  # Normalize the preferences
+                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()])  # Duplicate preferences
 
         print(f'preferences total {preferences_total}')
         return preferences_total
-
 
     #def choose_discard(self, cards: list[str], constraints: list[str]):
     def choose_toppings(self, preferences):
@@ -112,29 +113,22 @@ class Player:
         Returns:
             Tuple[int, center, first cut angle]: Return the pizza id you choose, the center of the cut in format [x_coord, y_coord] where both are in inches relative of pizza center of radius 6, the angle of the first cut in radians. 
         """
-        final_id = 0
-        final_center = [1,1]
+        final_id = remaining_pizza_ids[-1]
+        final_center = [2,2]
         final_angle = np.pi/8
-        final_score = 0
+        max_score = 0
         
-        id = remaining_pizza_ids[final_id]
-        x = 1; y = 1; angle = np.pi/8
-        cut = [1, 1, angle]
-        if self.counter == 0:
-            #B, C, U, obtained_preferences = self.calculator.final_score(pizzas, [0], [customer_amounts], [cut], self.num_toppings, self.multiplier, 12*self.multiplier, 10*self.multiplier)
-            """
-            print(B)
-            print(self.sum(B[0]))
-            print(C)
-            print(self.sum(C[0]))
-            print(U)
-            print(self.sum(U[0]))
-            print(obtained_preferences)
-            print(self.sum(obtained_preferences[0]))
-            """
-            self.counter += 1
+        cut = [self.x + final_center[0]*self.multiplier, self.y - final_center[1]*self.multiplier, final_angle]
+        score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [cut])
         
-        return remaining_pizza_ids[final_id], final_center, final_angle
+        return final_id, final_center, final_angle
+
+    def get_score(self, pizzas, ids, preferences, cuts):
+        B, C, U, obtained_preferences, center_offsets, slice_amount_metric = self.calculator.final_score(pizzas, ids, preferences, cuts, self.num_toppings, self.multiplier, self.x, self.y)
+        usum = self.sum(U[0])
+        bsum = self.sum(B[0])
+        csum = self.sum(C[0])
+        return bsum - csum
 
     def sum(self, array):
         sum = 0
@@ -142,4 +136,3 @@ class Player:
             for b in a:
                 sum += b
         return sum
-

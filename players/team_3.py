@@ -34,17 +34,17 @@ class Player:
             for i in range(num_cust):
                 preferences_1 = np.random.normal(mean, std_dev, self.num_toppings)
                 print(f'preferences 1 self.rng {preferences_1}')
-                preferences_1 = np.clip(preferences_1, 0, None)  # Ensure preferences are non-negative
-                preferences_1 /= preferences_1.sum()  # Normalize the preferences
-                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()])  # Duplicate preferences
+                preferences_1 = np.clip(preferences_1, 0, None)  
+                preferences_1 /= preferences_1.sum()  
+                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()]) 
         else :
             np.random.seed(rng)
             for i in range(num_cust):
                 preferences_1 = np.random.normal(mean, std_dev, self.num_toppings)
                 print(f'preferences 1 rng {preferences_1}')
-                preferences_1 = np.clip(preferences_1, 0, None)  # Ensure preferences are non-negative
-                preferences_1 /= preferences_1.sum()  # Normalize the preferences
-                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()])  # Duplicate preferences
+                preferences_1 = np.clip(preferences_1, 0, None)  
+                preferences_1 /= preferences_1.sum()
+                preferences_total.append([preferences_1.tolist(), preferences_1.tolist()])  
 
         print(f'preferences total {preferences_total}')
         return preferences_total

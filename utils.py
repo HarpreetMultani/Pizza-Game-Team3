@@ -253,7 +253,7 @@ class pizza_calculations():
                 area_1 = self.triangle_area(origin, int_pt, circ_pts[i])
                 area_2 = self.triangle_area(center, circ_pts[(i+1)%8], int_pt)
                 product_magnitudes = np.sqrt(circ_pts[i][0]**2 + circ_pts[i][1]**2)*np.sqrt(circ_pts[(i+1)%8][0]**2 + circ_pts[(i+1)%8][1]**2)
-                theta_sector = math.acos(np.dot(circ_pts[i], circ_pts[(i+1)%8])/product_magnitudes)
+                theta_sector = math.acos(np.round( np.dot(circ_pts[i], circ_pts[(i+1)%8]), 4 )/np.round(product_magnitudes, 4))
                 area_sector = theta_sector*36/2
                 area_slice[i] = area_sector + area_2 - area_1
             elif hasattr(int_pt_2, "x"):
@@ -261,14 +261,14 @@ class pizza_calculations():
                 area_1 = self.triangle_area([0,0], int_pt, circ_pts[(i+1)%8])
                 area_2 = self.triangle_area(center, int_pt, circ_pts[i])
                 product_magnitudes = np.sqrt(circ_pts[i][0]**2 + circ_pts[i][1]**2)*np.sqrt(circ_pts[(i+1)%8][0]**2 + circ_pts[(i+1)%8][1]**2)
-                theta_sector = math.acos(np.dot(circ_pts[i], circ_pts[(i+1)%8])/product_magnitudes)
+                theta_sector = math.acos(np.round( np.dot(circ_pts[i], circ_pts[(i+1)%8]), 4 )/np.round(product_magnitudes, 4))
                 area_sector = theta_sector*36/2
                 area_slice[i] = area_sector + area_2 - area_1
             else:
                 area_1 = self.triangle_area([0,0], center, circ_pts[(i+1)%8])
                 area_2 = self.triangle_area(center, [0,0], circ_pts[i])
                 product_magnitudes = np.sqrt(circ_pts[i][0]**2 + circ_pts[i][1]**2)*np.sqrt(circ_pts[(i+1)%8][0]**2 + circ_pts[(i+1)%8][1]**2)
-                theta_sector = math.acos(np.dot(circ_pts[i], circ_pts[(i+1)%8])/product_magnitudes)
+                theta_sector = math.acos(np.round( np.dot(circ_pts[i], circ_pts[(i+1)%8]), 4 )/np.round(product_magnitudes, 4))
                 area_sector = theta_sector*36/2
                 if theta_sector>=np.pi/4:
                     area_slice[i] = area_sector + area_2 + area_1

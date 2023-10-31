@@ -4,6 +4,7 @@ from typing import Tuple, List
 from utils import pizza_calculations
 
 import numpy as np
+from itertools import permutations
 from math import pi, sin, cos, tan, sqrt
 
 
@@ -61,21 +62,46 @@ class Player:
         print(pizzas)
         return list(pizzas)
 
+    def _draw_topping(self, angle_start, angle_end, amount, category, r = None):
+        theta = (angle_end-angle_start)/(2*amount)
+        radius = self.BUFFER + 0.375/sin(theta)
+        if r is not None:
+            radius = max(radius, r)
+        return [[radius*cos(angle_start+(2*i+1)*theta), radius*sin(angle_start+(2*i+1)*theta), category] for i in range(amount)]
+
     def _get_topping_2(self, preferences):
-        radius = self.BUFFER + 0.375 / sin(pi / 24)
-        theta = pi/24
-        pizza = [[radius*cos((2*i+1)*theta), radius*sin((2*i+1)*theta), 1+i//12] for i in range(24)]
+        inner = self._draw_topping(0, pi, 4, 1) +\
+                self._draw_topping(pi, 2*pi, 4, 2)
+        outer = self._draw_topping(0, pi, 8, 1) +\
+                self._draw_topping(pi, 2*pi, 8, 2)
+        pizza = inner + outer
         return [pizza] * 10
 
     def _get_topping_3(self, preferences):
-        inner_radius = self.BUFFER + 0.375 / sin(pi / 16)
-        outer_radius = self.BUFFER + 0.375 / sin(pi / 32)
-        return self._get_topping_default(preferences)
+        def helper(categories):
+            inner = self._draw_topping(0, pi, 2, categories[0]) +\
+                    self._draw_topping(pi, 2*pi, 2, categories[1])
+            outer = self._draw_topping(0, pi, 6, categories[0]) +\
+                    self._draw_topping(pi, 2*pi, 6, categories[1])
+            arc = self._draw_topping(0.25*pi, 0.75*pi, 8, categories[2])
+            return inner + outer + arc
+        perms = list(permutations([1,2,3]))*2
+        return [helper(perm) for perm in perms[0:10]]
 
     def _get_topping_4(self, preferences):
-        inner_radius = self.BUFFER + 0.375 / sin(pi / 12)
-        outer_radius = self.BUFFER + 0.375 / sin(pi / 24) # might need to make it bigger to have more flexibility
-        return self._get_topping_default(preferences)
+        def helper(categories):
+            inner = self._draw_topping(0, pi, 2, categories[0]) +\
+                    self._draw_topping(pi, 2*pi, 2, categories[1])
+            outer = self._draw_topping(0, pi, 4, categories[0], 1.22) +\
+                    self._draw_topping(pi, 2*pi, 4, categories[1], 1.22)
+            # 1.22 drived as below:
+            # https://www.symbolab.com/solver?or=gms&query=%28x*cos%28pi%2F8%29-0.375%29%5E2+%2B+%28x*sin%28pi%2F8%29-0.375%29%5E2+%3D+0.75%5E2
+            arc = self._draw_topping(0, 0.5*pi, 6, categories[2], 4) +\
+                self._draw_topping(0.5*pi, pi, 6, categories[3], 4)
+            # used 4 to move the arc outer. may wanna change this.
+            return inner + outer + arc
+        perms = list(permutations([1,2,3,4]))
+        return [helper(perm) for perm in perms[0:10]]
 
     def choose_toppings(self, preferences):
         """Function in which we choose position of toppings
@@ -103,7 +129,7 @@ class Player:
     def _get_cut_2(self, pizzas, remaining_pizza_ids, customer_amounts):
         # not considering non-integer cuts
         angle = customer_amounts[0][0]/12 * pi
-        radius = 6 - self.BUFFER
+        radius = sqrt(2)*(self.BUFFER + 0.375 + 0.375 / sin(pi / 16))
         return remaining_pizza_ids[0], [radius*cos(pi+angle), radius*sin(pi+angle)], angle
 
     def _get_cut_3(self, pizzas, remaining_pizza_ids, customer_amounts):

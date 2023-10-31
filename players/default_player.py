@@ -96,4 +96,4 @@ class Player:
             Tuple[int, center, first cut angle]: Return the pizza id you choose, the center of the cut in format [x_coord, y_coord] where both are in inches relative of pizza center of radius 6, the angle of the first cut in radians. 
         """
         pizza_id = remaining_pizza_ids[0]
-        return  remaining_pizza_ids[0], [1,1], np.pi/8
+        return  remaining_pizza_ids[0], [0,0], np.pi/4

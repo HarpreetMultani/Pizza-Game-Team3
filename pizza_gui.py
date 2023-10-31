@@ -273,6 +273,8 @@ class gui():
         
     def draw_cuts(self, center, theta, color="black"):     #theta is in radians here
         dist_centers = math.sqrt((center[0]-self.x)**2 + (center[1]- self.y)**2)
+        if dist_centers/self.multiplier >= 6:
+            self.label.config( text = "You tried to place the center outside the pizza. That's not cool bro.")
         if center[0] == self.x:
             angle_centerline = 0
         else:
@@ -281,7 +283,7 @@ class gui():
         sinin_1 = math.asin(math.sin(theta_diag) * dist_centers/(self.multiplier*6))
         phi_1 = theta_diag - sinin_1
         phi_2 = theta_diag - math.pi + sinin_1
-        if math.sin(theta_diag)==0:
+        if np.round(math.sin(theta_diag), 4)==0:
             point_1 = [self.x + 6*self.multiplier*math.cos(angle_centerline)  ,  self.y - 6*self.multiplier*math.sin(angle_centerline)]
             point_2 = [self.x - 6*self.multiplier*math.cos(angle_centerline)  ,  self.y + 6*self.multiplier*math.sin(angle_centerline)]
         else:
@@ -499,16 +501,16 @@ class gui():
         for i in range(constants.number_of_initial_pizzas + 1):
             for j in range(8):
                 if i==1:
-                    self.e = Entry(self.root_1, width=20, fg='black',
+                    self.e = Entry(self.root_1, width=10, fg='black',
                                 font=('Arial',16,'bold'))
                 elif i==2:
-                    self.e = Entry(self.root_1, width=20, fg='black',
+                    self.e = Entry(self.root_1, width=10, fg='black',
                                 font=('Arial',16,'bold'))
                 elif i==3:
-                    self.e = Entry(self.root_1, width=20, fg='black',
+                    self.e = Entry(self.root_1, width=10, fg='black',
                                 font=('Arial',16,'bold'))
                 else:
-                    self.e = Entry(self.root_1, width=20, fg='black',
+                    self.e = Entry(self.root_1, width=10, fg='black',
                                 font=('Arial',16,'bold'))
                 self.e.grid(row=i, column=j)
                 self.e.insert(END, list_scores[i][j])

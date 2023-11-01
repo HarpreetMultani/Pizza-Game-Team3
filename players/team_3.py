@@ -80,11 +80,11 @@ class Player:
                 elif self.num_toppings == 3:
                     if i < 16:  # Toppings 1 and 2
                         angle = 2 * np.pi * i / 16
-                        x = inner_circle_radius * np.cos(angle)
-                        y = inner_circle_radius * np.sin(angle)
+                        x = 2 * np.cos(angle)
+                        y = 2 * np.sin(angle)
                         topping_type = 1 if i < 8 else 2
                     else:  # Topping 3
-                        angle = 2 * np.pi * (i - 8) / 16 + np.pi/8
+                        angle = 2 * np.pi * (i - 8) / 28 + np.pi/6
                         x = outer_circle_radius * np.cos(angle)
                         y = outer_circle_radius * np.sin(angle)
                         topping_type = 3
@@ -92,8 +92,8 @@ class Player:
                 elif self.num_toppings == 4:
                     if i < 12:  # Toppings 1 and 2
                         angle = 2 * np.pi * i / 12
-                        x = inner_circle_radius * np.cos(angle)
-                        y = inner_circle_radius * np.sin(angle)
+                        x = 2 * np.cos(angle)
+                        y = 2 * np.sin(angle)
                         topping_type = 1 if y > 0 else 2
                     else:  # Toppings 3 and 4
                         angle = 2 * np.pi * (i - 6) / 24

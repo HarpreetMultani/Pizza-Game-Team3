@@ -195,12 +195,12 @@ class no_gui():
             print("Overlapping placement. You cannot serve customers now.")
         else:
             print("Your shop is now open!!!")
-            for i in range(constants.number_of_initial_pizzas):
+            for j in range(constants.number_of_initial_pizzas):
                 options_pizza = []
                 for i in range(len(self.cuts)):
                     if list(self.cuts[i]) == [0,0,0]:
                         options_pizza.append(i)
-                pizza_id, center, theta = self.player_instance.choose_and_cut(self.pizzas, options_pizza, self.preferences[self.customer_id])
+                pizza_id, center, theta = self.player_instance.choose_and_cut(self.pizzas, options_pizza, self.preferences[j])
                 self.pizza_choice_order.append(pizza_id)
                 self.pizza_id = pizza_id
                 self.cuts[pizza_id][0] = (self.x + center[0]*self.multiplier)

@@ -64,22 +64,52 @@ class Player:
         """
         x_coords = [np.sin(np.pi/2)]
         pizzas = np.zeros((10, 24, 3))
-        for j in range(constants.number_of_initial_pizzas):
-            pizza_indiv = np.zeros((24,3))
+        for j in range(10):  # Assuming we want to make 10 pizzas
+            pizza_indiv = np.zeros((24, 3))
             # Define the radius of the circle where the toppings will be placed
-            circle_radius = 3 # You can adjust this value as needed
+            inner_circle_radius = 3  # Radius for toppings 1 and 2
+            outer_circle_radius = 4.5  # Radius for toppings 3 and 4
+
             for i in range(24):
-                angle = 2 * np.pi * i / 24
-                x = circle_radius * np.cos(angle)
-                y = circle_radius * np.sin(angle)
-                # Determine topping type based on the angle and number of toppings
                 if self.num_toppings == 2:
+                    angle = 2 * np.pi * i / 24
+                    x = inner_circle_radius * np.cos(angle)
+                    y = inner_circle_radius * np.sin(angle)
                     topping_type = 1 if angle < np.pi else 2
+
                 elif self.num_toppings == 3:
-                    topping_type = 1 if angle < 2*np.pi/3 else (2 if angle < 4*np.pi/3 else 3)
-                else: # self.num_toppings == 4
-                    topping_type = 1 if angle < np.pi/2 else (2 if angle < np.pi else (3 if angle < 3*np.pi/2 else 4))
+                    if i < 16:  # Toppings 1 and 2
+                        angle = 2 * np.pi * i / 16
+                        x = inner_circle_radius * np.cos(angle)
+                        y = inner_circle_radius * np.sin(angle)
+                        topping_type = 1 if i < 8 else 2
+                    else:  # Topping 3
+                        angle = 2 * np.pi * (i - 8) / 16 + np.pi/8
+                        x = outer_circle_radius * np.cos(angle)
+                        y = outer_circle_radius * np.sin(angle)
+                        topping_type = 3
+
+                elif self.num_toppings == 4:
+                    if i < 12:  # Toppings 1 and 2
+                        angle = 2 * np.pi * i / 12
+                        x = inner_circle_radius * np.cos(angle)
+                        y = inner_circle_radius * np.sin(angle)
+                        topping_type = 1 if y > 0 else 2
+                    else:  # Toppings 3 and 4
+                        angle = 2 * np.pi * (i - 6) / 24
+                        if i < 18:  # Topping 3
+                            angle += np.pi/4 + np.pi/24  
+                            x = outer_circle_radius * np.cos(angle)
+                            y = outer_circle_radius * np.sin(angle)
+                            topping_type = 3
+                        else:  # Topping 4
+                            angle += np.pi/2 + np.pi/4  
+                            x = outer_circle_radius * np.cos(angle)  
+                            y = outer_circle_radius * np.sin(angle)
+                            topping_type = 4
+
                 pizza_indiv[i] = [x, y, topping_type]
+
             pizzas[j] = pizza_indiv
         return list(pizzas)
         """

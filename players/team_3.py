@@ -146,7 +146,7 @@ class Player:
         final_id = remaining_pizza_ids[0]
         final_center = [0,0]
         final_angle = 0
-        max_score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [0,0,0])
+        max_score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [[self.x + final_center[0]*self.multiplier, self.y - final_center[1]*self.multiplier, final_angle]])
 
         if self.num_toppings == 2:
             radius = 5.5

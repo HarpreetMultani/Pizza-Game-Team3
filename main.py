@@ -16,8 +16,10 @@ if __name__ == '__main__':
     parser.add_argument("--gen_10_seed", "-s10", default=50, help="Seed for generating 10 preferences")
     #parser.add_argument("--autoplayer_number", "-a_num", default=0, help="Which player is the autoplayer")
     parser.add_argument("--generator_number", "-g_num", default=0, help="Which player is the preference generator")
-    parser.add_argument("--player", "-p", default=0, help="Team number playing the game if no gui")
-    parser.add_argument("--num_toppings", "-num_top", default=2, help="Total different types of toppings")
+    #only for no gui case
+    parser.add_argument("--player", "-p", default=1, help="Team number playing the game if no gui")
+    parser.add_argument("--num_toppings", "-num_top", default=4, help="Total different types of toppings")
+    
     parser.add_argument("--tournament", "-tmnt", default=False, help="Is this a tournament run or not")
     args = parser.parse_args()
     args.tournament = "False"

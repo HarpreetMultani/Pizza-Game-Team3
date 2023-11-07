@@ -16,7 +16,7 @@ class Player:
 
         Args:
             num_cust(int) : the total number of customer preferences you need to create
-            rng(int) : A random seed that you can use to generate your customers. You can choose to not pass this, in that case the seed taken will be self.rng
+            rng(numpy generator object) : A random seed that you can use to generate your customers. You can choose to not pass this, in that case the seed taken will be self.rng
 
         Returns:
             preferences_total(list) : List of size [num_cust, 2, num_toppings], having all generated customer preferences

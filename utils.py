@@ -74,6 +74,9 @@ class pizza_calculations():
         center = [cut[0], cut[1]]
         theta  = cut[2]                
 
+        if cut[0]**2 + cut[1]**2 > 36:
+            print("You are trying to pass a cut with center outside the pizza to the utils function. This may fail.")
+
         topping_amts = [[0 for x in range(num_toppings)] for y in range(8)]
         for topping_i in pizza:
             top_abs_x = topping_i[0]

@@ -44,6 +44,7 @@ class no_gui():
         self.final_preferences = []
         self.pizza_choice_order = []
         self.calculator = pizza_calculations()
+        self.preferences_100 = None
 
         #replace with arguments
         #self.autoplayer_number = args.autoplayer_number
@@ -180,9 +181,10 @@ class no_gui():
         # print("Customer prefernces are being generated..")
         # print("self.generator_number", self.generator_number)
         self.preferences = self.all_player_instances[self.generator_number].customer_gen(10, self.rng_generator_10)
+        self.preferences_100 = self.all_player_instances[self.generator_number].customer_gen(100, self.rng_generator_100)
         # print("Generated preferences are:", self.preferences)
         self.initialise_player(self.num_player, self.num_player)
-        self.pizzas = self.player_instance.choose_toppings(self.all_player_instances[self.generator_number].customer_gen(100, self.rng_generator_100))
+        self.pizzas = self.player_instance.choose_toppings(self.preferences_100)
         self.pizzas_drawn = constants.number_of_initial_pizzas
         clash_exists_overall = False
         for i in range(constants.number_of_initial_pizzas):

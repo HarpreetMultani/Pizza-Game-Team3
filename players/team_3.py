@@ -156,7 +156,6 @@ class Player:
                 y = radius * np.sin(angle)
                 test_center = [x,y]
                 for test_angle in range(0,180,10):
-                    test_angle = 0
                     cut = [self.x + test_center[0]*self.multiplier, self.y - test_center[1]*self.multiplier, test_angle]
                     score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [cut])
 

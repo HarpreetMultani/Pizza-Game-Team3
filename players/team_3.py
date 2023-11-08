@@ -153,20 +153,19 @@ class Player:
         final_angle = 0
         max_score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [[self.x + final_center[0]*self.multiplier, self.y - final_center[1]*self.multiplier, final_angle]])
 
-        if self.num_toppings == 2:
-            radius = 5.5
-            for i in range(24):
-                angle = 2 * np.pi * i / 24
-                x = radius * np.cos(angle)
-                y = radius * np.sin(angle)
-                test_center = [x,y]
-                for test_angle in range(0,180,10):
-                    cut = [self.x + test_center[0]*self.multiplier, self.y - test_center[1]*self.multiplier, test_angle]
-                    score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [cut])
+        radius = 5.5
+        for i in range(24):
+            angle = 2 * np.pi * i / 24
+            x = radius * np.cos(angle)
+            y = radius * np.sin(angle)
+            test_center = [x,y]
+            for test_angle in range(0,180,10):
+                cut = [self.x + test_center[0]*self.multiplier, self.y - test_center[1]*self.multiplier, test_angle]
+                score = self.get_score([pizzas[final_id]], [0], [customer_amounts], [cut])
 
-                    if score > max_score:
-                        final_center = test_center
-                        final_angle = test_angle
+                if score > max_score:
+                    final_center = test_center
+                    final_angle = test_angle
             
         return final_id, final_center, final_angle
 

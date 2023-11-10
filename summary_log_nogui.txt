@@ -2,8 +2,8 @@
 
 Customer 1 :
 Pizza 0
-Cut at (-4.9765487885631075, -2.3417861036079017) and angle 0.0radians.
-Center offset : 5.500000000000001
+Cut at (5.312592044589874, 1.4235047480638685) and angle 1.6800000000000008radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -34,23 +34,23 @@ Total : 0.0
 B : [[0.171 0.171]
  [1.678 1.678]]
 Total : 3.698
-C : [[1.074 0.976]
- [0.775 0.873]]
+C : [[0.614 0.613]
+ [1.235 1.236]]
 Total : 3.6979999999999995
-S : [[-0.903 -0.805]
- [ 0.903  0.805]]
+S : [[-0.443 -0.442]
+ [ 0.443  0.442]]
 Total : -1.1102230246251565e-16
 Desired Preferences : [array([5.82883152, 6.17116848]), array([4.32171305, 7.67828695])]
-Obtained Preferences : [[6.903 5.195]
- [5.097 6.805]]
-Slice by slice amount differences sum : 34.46698427930252
+Obtained Preferences : [[6.443 5.558]
+ [5.557 6.442]]
+Slice by slice amount differences sum : 14.161536643189596
 
 
 
 
 Customer 2 :
 Pizza 1
-Cut at (-5.113770672385383, -2.0246850397657297) and angle 0.0radians.
+Cut at (5.312592044589874, 1.4235047480638685) and angle 3.120000000000002radians.
 Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
@@ -82,24 +82,24 @@ Total : 0.0
 B : [[4.904 4.904]
  [0.96  0.96 ]]
 Total : 11.728000000000002
-C : [[5.228 5.117]
- [0.635 0.747]]
-Total : 11.726999999999999
-S : [[-0.324 -0.213]
- [ 0.325  0.213]]
-Total : 0.0010000000000000009
+C : [[1.011 2.293]
+ [4.853 3.571]]
+Total : 11.728
+S : [[ 3.893  2.611]
+ [-3.893 -2.611]]
+Total : -4.440892098500626e-16
 Desired Preferences : [array([10.90397711,  1.09602289]), array([6.95969002, 5.04030998])]
-Obtained Preferences : [[5.676 6.213]
- [6.324 5.787]]
-Slice by slice amount differences sum : 34.469010205669846
+Obtained Preferences : [[9.893 3.389]
+ [2.107 8.611]]
+Slice by slice amount differences sum : 15.960812959604013
 
 
 
 
 Customer 3 :
 Pizza 2
-Cut at (0.0, 0.0) and angle 0.0radians.
-Center offset : 0.0
+Cut at (-2.7500000000000027, 4.763139720814411) and angle 2.7200000000000015radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -130,24 +130,24 @@ Total : 0.0
 B : [[2.555 2.555]
  [2.689 2.689]]
 Total : 10.488
-C : [[2.555 2.555]
- [2.689 2.689]]
-Total : 10.488
-S : [[0. 0.]
- [0. 0.]]
-Total : 0.0
+C : [[2.916 4.451]
+ [2.328 0.793]]
+Total : 10.487999999999998
+S : [[-0.361 -1.896]
+ [ 0.361  1.896]]
+Total : 8.881784197001252e-16
 Desired Preferences : [array([8.55504904, 3.44495096]), array([8.68906472, 3.31093528])]
-Obtained Preferences : [[6. 6.]
- [6. 6.]]
-Slice by slice amount differences sum : 16.802327300598687
+Obtained Preferences : [[5.639 7.896]
+ [6.361 4.104]]
+Slice by slice amount differences sum : 34.4977004519765
 
 
 
 
 Customer 4 :
 Pizza 3
-Cut at (-5.402579879007789, -1.0305972302214854) and angle 0.0radians.
-Center offset : 5.500000000000001
+Cut at (5.312592044589874, 1.4235047480638685) and angle 2.5600000000000014radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -178,24 +178,24 @@ Total : 0.0
 B : [[1.557 1.557]
  [5.801 5.801]]
 Total : 14.716
-C : [[4.765 6.837]
- [2.592 0.52 ]]
-Total : 14.714
-S : [[-3.208 -5.28 ]
- [ 3.209  5.281]]
-Total : 0.002000000000000668
+C : [[0.283 0.096]
+ [7.074 7.261]]
+Total : 14.713999999999999
+S : [[ 1.274  1.461]
+ [-1.273 -1.46 ]]
+Total : 0.002000000000000224
 Desired Preferences : [array([7.55662493, 4.44337507]), array([11.80052072,  0.19947928])]
-Obtained Preferences : [[ 2.791 11.281]
- [ 9.209  0.719]]
-Slice by slice amount differences sum : 34.49205382213006
+Obtained Preferences : [[7.273 4.54 ]
+ [4.727 7.46 ]]
+Slice by slice amount differences sum : 19.736451505140266
 
 
 
 
 Customer 5 :
 Pizza 4
-Cut at (0.0, 0.0) and angle 0.0radians.
-Center offset : 0.0
+Cut at (-5.312592044589875, 1.423504748063864) and angle 0.4799999999999999radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -226,23 +226,23 @@ Total : 0.0
 B : [[0.351 0.351]
  [5.04  5.04 ]]
 Total : 10.782
-C : [[0.351 0.351]
- [5.04  5.04 ]]
-Total : 10.782
-S : [[0. 0.]
- [0. 0.]]
-Total : 0.0
+C : [[2.415 4.108]
+ [2.976 1.283]]
+Total : 10.781999999999998
+S : [[-2.064 -3.757]
+ [ 2.064  3.757]]
+Total : 4.440892098500626e-16
 Desired Preferences : [array([6.35135281, 5.64864719]), array([11.04039495,  0.95960505])]
-Obtained Preferences : [[6. 6.]
- [6. 6.]]
-Slice by slice amount differences sum : 17.73895734714889
+Obtained Preferences : [[3.936 9.757]
+ [8.064 2.243]]
+Slice by slice amount differences sum : 34.48004167089868
 
 
 
 
 Customer 6 :
 Pizza 5
-Cut at (-5.113770672385383, -2.0246850397657297) and angle 0.0radians.
+Cut at (5.312592044589874, 1.4235047480638685) and angle 2.5600000000000014radians.
 Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
@@ -274,24 +274,24 @@ Total : 0.0
 B : [[1.753 1.753]
  [2.393 2.393]]
 Total : 8.291999999999998
-C : [[1.428 1.54 ]
- [2.717 2.606]]
+C : [[3.026 3.213]
+ [1.119 0.933]]
 Total : 8.291
-S : [[ 0.325  0.213]
- [-0.324 -0.213]]
+S : [[-1.273 -1.46 ]
+ [ 1.274  1.46 ]]
 Total : 0.0009999999999994458
 Desired Preferences : [array([4.24721215, 7.75278785]), array([3.60703652, 8.39296348])]
-Obtained Preferences : [[5.676 6.213]
- [6.324 5.787]]
-Slice by slice amount differences sum : 34.467366798787225
+Obtained Preferences : [[7.273 4.54 ]
+ [4.727 7.46 ]]
+Slice by slice amount differences sum : 15.137538043571672
 
 
 
 
 Customer 7 :
 Pizza 6
-Cut at (-4.9765487885631075, -2.3417861036079017) and angle 0.0radians.
-Center offset : 5.500000000000001
+Cut at (5.312592044589874, 1.4235047480638685) and angle 3.120000000000002radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -322,24 +322,24 @@ Total : 0.0
 B : [[4.345 4.345]
  [0.597 0.597]]
 Total : 9.883999999999999
-C : [[3.442 3.54 ]
- [0.306 0.208]]
-Total : 7.496
-S : [[0.903 0.805]
- [0.291 0.389]]
-Total : 2.387999999999999
+C : [[0.452 1.734]
+ [3.296 2.014]]
+Total : 7.495999999999999
+S : [[ 3.893  2.611]
+ [-2.699 -1.417]]
+Total : 2.388
 Desired Preferences : [array([10.34486934,  1.65513066]), array([5.4029453, 6.5970547])]
-Obtained Preferences : [[6.903 5.195]
- [5.097 6.805]]
-Slice by slice amount differences sum : 34.46537315186891
+Obtained Preferences : [[9.893 3.389]
+ [2.107 8.611]]
+Slice by slice amount differences sum : 13.548031326858345
 
 
 
 
 Customer 8 :
 Pizza 7
-Cut at (-5.489147006355495, -0.3453478574112253) and angle 0.0radians.
-Center offset : 5.500000000000001
+Cut at (5.312592044589874, 1.4235047480638685) and angle 2.4800000000000013radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -370,24 +370,24 @@ Total : 0.0
 B : [[3.937 3.937]
  [2.322 2.322]]
 Total : 12.518
-C : [[1.077 2.05 ]
- [2.691 3.665]]
-Total : 9.483
-S : [[ 2.86   1.887]
- [-0.369 -1.343]]
-Total : 3.035
+C : [[3.767 3.78 ]
+ [2.152 2.165]]
+Total : 11.864
+S : [[0.17  0.157]
+ [0.17  0.157]]
+Total : 0.6539999999999999
 Desired Preferences : [array([2.06343544, 9.93656456]), array([8.32177482, 3.67822518])]
-Obtained Preferences : [[ 0.987 11.987]
- [11.013  0.013]]
-Slice by slice amount differences sum : 34.50394962145092
+Obtained Preferences : [[5.83  6.157]
+ [6.17  5.843]]
+Slice by slice amount differences sum : 16.52326912267175
 
 
 
 
 Customer 9 :
 Pizza 8
-Cut at (-4.9765487885631075, -2.3417861036079017) and angle 0.0radians.
-Center offset : 5.500000000000001
+Cut at (5.312592044589874, 1.4235047480638685) and angle 3.120000000000002radians.
+Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
 Topping 1.0 at (2.598076211353316,1.4999999999999998)
@@ -418,23 +418,23 @@ Total : 0.0
 B : [[0.108 0.108]
  [5.917 5.917]]
 Total : 12.05
-C : [[0.794 0.697]
- [5.014 5.112]]
-Total : 11.617
-S : [[-0.686 -0.589]
- [ 0.903  0.805]]
-Total : 0.4329999999999994
+C : [[3.785 2.503]
+ [2.024 3.306]]
+Total : 11.618000000000002
+S : [[-3.677 -2.395]
+ [ 3.893  2.611]]
+Total : 0.4319999999999995
 Desired Preferences : [array([6.10841726, 5.89158274]), array([ 0.0830272, 11.9169728])]
-Obtained Preferences : [[6.903 5.195]
- [5.097 6.805]]
-Slice by slice amount differences sum : 34.475728823508135
+Obtained Preferences : [[9.893 3.389]
+ [2.107 8.611]]
+Slice by slice amount differences sum : 15.195333151043947
 
 
 
 
 Customer 10 :
 Pizza 9
-Cut at (-1.6995934690622092, -5.230810839623345) and angle 0.0radians.
+Cut at (5.312592044589874, 1.4235047480638685) and angle 2.5600000000000014radians.
 Center offset : 5.5
 Topping 1.0 at (3.0,0.0)
 Topping 1.0 at (2.897777478867205,0.7764571353075622)
@@ -466,22 +466,22 @@ Total : 0.0
 B : [[0.895 0.895]
  [2.22  2.22 ]]
 Total : 6.23
-C : [[2.412 2.717]
- [0.703 0.398]]
+C : [[2.169 2.355]
+ [0.946 0.76 ]]
 Total : 6.2299999999999995
-S : [[-1.517 -1.822]
- [ 1.517  1.822]]
+S : [[-1.274 -1.46 ]
+ [ 1.274  1.46 ]]
 Total : 4.440892098500626e-16
 Desired Preferences : [array([5.10497184, 6.89502816]), array([3.78024938, 8.21975062])]
-Obtained Preferences : [[7.517 4.178]
- [4.483 7.822]]
-Slice by slice amount differences sum : 34.435165011625806
+Obtained Preferences : [[7.273 4.54 ]
+ [4.727 7.46 ]]
+Slice by slice amount differences sum : 14.191112339813957
 
 
 Total Score U : 0.0
 Total score B : 100.38600000000001
-Total score C : 94.526
-Total score S : 5.859999999999999
-Total Slice by slice metric : 310.31691636209104
-Total center offsets : 44.0
+Total score C : 96.909
+Total score S : 3.4770000000000003
+Total Slice by slice metric : 193.4318272147687
+Total center offsets : 55.0
 
